@@ -1,11 +1,11 @@
-// TODO: Include packages needed for this application
-const fs = require('fs')
-const inquirer = require('inquirer')
-const generateMarkdown = require('./scripts/generate-markdown')
+// Packages needed for this application
+import fs from 'fs'
+import inquirer from 'inquirer'
+import generateMarkdown from './utils/generateMarkdown'
 
-// TODO: Create an array of questions for user input
-inquirer.prompt(
-    [
+// An array of questions for user input
+inquirer
+    .prompt([
         {
             type:'input',
             name:'title',
@@ -72,9 +72,10 @@ inquirer.prompt(
             message: 'List the GitHub usernames of any contributors to the project',
             validate: (value) => { if (value) {return true} else {return 'Please enter a value.'}},
         },
-    ]
-    )
-    
+    ])
+    .then(answers => {
+        console.log(answers)
+    })
 
 
 // TODO: Create a function to write README file
