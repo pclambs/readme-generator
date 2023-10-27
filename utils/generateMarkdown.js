@@ -16,46 +16,49 @@ function renderLicenseSection(license) {
 
 // Function to generate markdown for README
 export const generateMarkdown = ({title, motivation, why, what, learn, install, use, license, dependencies, creator, name, email, contributors}) => {
-  return `
-  # ${title}
+  return `# ${title}
 
-  ## Description
+${renderLicenseBadge(license)}
 
-  - ${motivation}
-  - ${why}
-  - ${what}
-  - ${learn}
+## Description
 
-  ## Table of Contents
+- ${motivation}
+- ${why}
+- ${what}
+- ${learn}
 
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Credits](#credits)
-  - [License](#license)
+## Table of Contents
 
-  ## Installation
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
-  Dependencies:
-  - ${dependencies}
+## Installation
 
-  Installation instructions:
-  - ${install}
+Dependencies:
+- ${dependencies}
 
-  ## Usage
+Installation instructions:
+- ${install}
 
-  - ${use}
+## Usage
 
-  ## Credits
+- ${use}
 
-  - ${creator}
-  - ${name}
-  - ${email}
-  - ${contributors}
+## Credits
 
-  ## License
+- ${creator}
+- ${name}
+- ${email}
+- ${contributors}
 
-  - ${license}
+## License
 
-  ## Badges
-  `
+${renderLicenseSection(license)}
+
+## Badges
+
+${renderLicenseLink(license)}
+`
 }
