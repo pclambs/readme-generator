@@ -1,4 +1,4 @@
-// Packages needed for this application
+// Imports
 import fs from 'fs'
 import inquirer from 'inquirer'
 import { generateMarkdown } from './utils/generateMarkdown.js'
@@ -9,78 +9,79 @@ inquirer
         {
             type:'input',
             name:'title',
-            message:'What is the title of your project?',
+            message:'1/13 What is the title of your project?',
             validate: (value) => { if (value) {return true} else {return 'Please input a value.'}},
         },
         {
             type:'input',
             name:'motivation',
-            message:'What was your motivation to build this project?',
+            message:'2/13 What was your motivation to build this project?',
             validate: (value) => { if (value) {return true} else {return 'Please input a value.'}},
         },
         {
             type:'input',
             name:'why',
-            message:'Why did you build it?',
+            message:'3/13 Why did you build it?',
             validate: (value) => { if (value) {return true} else {return 'Please input a value.'}},
         },
         {
             type:'input',
             name:'what',
-            message:'What problem does it solve?',
+            message:'4/13 What problem does it solve?',
             validate: (value) => { if (value) {return true} else {return 'Please input a value.'}},
         },
         {
             type:'input',
             name:'learn',
-            message:'What did you learn?',
+            message:'5/13 What did you learn?',
             validate: (value) => { if (value) {return true} else {return 'Please input a value.'}},
         },
         {
             type: 'input',
             name: 'dependencies',
-            message: 'List any project dependencies here.',
+            message: '6/13 List any project dependencies here.',
             validate: (value) => { if (value) {return true} else {return 'Please input a value.'}},
         },
         {
             type:'input',
             name:'install',
-            message:'How do you install your project?',
+            message:'7/13 How do you install your project?',
             validate: (value) => { if (value) {return true} else {return 'Please input a value.'}},
         },
         {
             type:'input',
             name:'use',
-            message:"Provide instructions and examples for use.",
+            message:'8/13 Provide instructions and examples for use.',
             validate: (value) => { if (value) {return true} else {return 'Please input a value.'}},
         },
         {
             type: 'input',
             name: 'creator',
-            message: 'State your GitHub username?',
+            message: '9/13 State your GitHub username?',
             validate: (value) => { if (value) {return true} else {return 'Please input a value.'}},
         },
         {
             type: 'input',
             name: 'name',
-            message: 'State your full name?',
+            message: '10/13 State your full name?',
             validate: (value) => { if (value) {return true} else {return 'Please input a value.'}},
         },
         {
             type: 'input',
             name: 'email',
-            message: 'State is your email address?',
+            message: '11/13 State is your email address?',
             validate: (value) => { if (value) {return true} else {return 'Please input a value.'}},
         },
         {
             type: 'input',
             name: 'contributors',
-            message: 'List the GitHub usernames of any contributors to the project',
+            message: '12/13 List the GitHub usernames of any contributors to the project',
             validate: (value) => { if (value) {return true} else {return 'Please input a value.'}},
         },
         {
-            type:'checkbox',
+            type:'list',
             name: 'license',
+            message: '13/13 Choose a license for your project.',
             choices:['MIT', 'APACHE2.0', 'Boost1.0', 'MPL2.0', 'BSD2', 'BSD3', 'none'],
             validate: (value) => { if (value) {return true} else {return 'Please input a value.'}},
         },
@@ -98,8 +99,8 @@ inquirer
     })
     .catch(error => console.log(error))
 
-// TODO: Create a function to initialize app
+// Initialize app
 function init() {}
 
 // Function call to initialize app
-init();
+init()
